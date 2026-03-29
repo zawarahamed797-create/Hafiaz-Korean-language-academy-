@@ -21,7 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* Continuous Scrolling Patti Fix */
+        /* Continuous Scrolling Patti */
         .scrolling-patti {
             background: var(--korea-red);
             color: white;
@@ -59,14 +59,19 @@
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             color: var(--korea-blue);
             text-decoration: none;
         }
         .logo span { color: var(--korea-red); }
 
-        /* Empty Banner Section */
+        .header-btns {
+            display: flex;
+            gap: 8px;
+        }
+
+        /* Banner */
         .hero-banner {
             background: url('banner.jpg');
             background-size: cover;
@@ -75,16 +80,14 @@
             width: 100%;
         }
 
-        /* Content Section */
         .hero-content-down {
             text-align: center;
             padding: 40px 5%;
             background: white;
         }
         .hero-content-down h1 { font-size: 2.5rem; color: var(--korea-blue); margin-bottom: 10px; }
-        .hero-content-down p { font-size: 1.2rem; margin-bottom: 25px; color: #555; }
 
-        /* Stats/Features with Animation */
+        /* Features */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -115,7 +118,7 @@
             75% { transform: rotate(-10deg); }
         }
 
-        /* Course Section */
+        /* Section Styling */
         .section { padding: 50px 5%; }
         .section-title {
             text-align: center;
@@ -132,6 +135,7 @@
             margin: 10px auto;
         }
 
+        /* Course Grid */
         .course-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -145,70 +149,56 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: 0.3s;
         }
-        .course-card:hover { transform: translateY(-5px); }
         .course-img { height: 200px; background: #ddd; display: flex; align-items: center; justify-content: center; font-size: 50px; color: white; }
-
         .course-info { padding: 20px; }
-        .price { color: var(--korea-blue); font-weight: bold; font-size: 22px; margin: 10px 0; }
 
-        /* Buttons Base Style */
+        /* Buttons */
         .btn {
-            display: inline-block;
-            padding: 12px 35px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            padding: 10px 18px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
             cursor: pointer;
+            font-size: 0.9rem;
             border: none;
-            font-size: 1.1rem;
         }
         .btn-whatsapp { background: #25D366; color: white; }
         .btn-call { background: var(--korea-blue); color: white; }
-        .btn-map { background: #ea4335; color: white; margin-top: 10px; }
+        .btn-map { background: #ea4335; color: white; margin-top: 10px; padding: 12px 30px;}
 
-        /* --- Beautiful Floating Animation for Bottom Buttons --- */
-        @keyframes floatingGlow {
-            0% { transform: translateY(0px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-            50% { transform: translateY(-10px); box-shadow: 0 15px 25px rgba(0,0,0,0.2); }
-            100% { transform: translateY(0px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        /* About Section */
+        .about-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            line-height: 1.8;
         }
 
-        /* Floating Buttons Container (Left & Right Fix) */
-        .fab-left {
-            position: fixed;
-            bottom: 25px;
-            left: 20px;
-            z-index: 2000;
-            animation: floatingGlow 3s ease-in-out infinite;
+        /* Review Photos */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
         }
-
-        .fab-right {
-            position: fixed;
-            bottom: 25px;
-            right: 20px;
-            z-index: 2000;
-            animation: floatingGlow 3s ease-in-out infinite;
-            animation-delay: 1.5s; /* Thora gap taake dono aik saath ooper na jayein */
-        }
-
-        .fab {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 28px;
-            text-decoration: none;
-            border: 2px solid #fff;
+        .review-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         @media (max-width: 768px) {
             .hero-banner { height: 250px; }
-            .hero-content-down h1 { font-size: 1.8rem; }
-            header { flex-direction: column; gap: 10px; }
+            header { flex-direction: column; gap: 15px; padding: 20px 2%; }
+            .logo { font-size: 18px; }
         }
     </style>
 </head>
@@ -216,15 +206,15 @@
 
 <header>
     <a href="#" class="logo">HAFIZ KOREAN <span>ACADEMY</span></a>
-    <div>
-        <a href="tel:+923448506173" class="btn btn-call"><i class="fas fa-phone"></i> ابھی کال کریں</a>
+    <div class="header-btns">
+        <a href="https://wa.me/923448506173" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="tel:+923448506173" class="btn btn-call"><i class="fas fa-phone"></i> Call Now</a>
     </div>
 </header>
 
 <div class="scrolling-patti">
     <div class="scroll-content">
-        حافظ کورین لینگویج اکیڈمی: نئے داخلے جاری ہیں --- EPS-TOPIK ٹیسٹ کی 100% تیاری --- کوریا جانے کے سنہری موقع سے فائدہ اٹھائیں --- رابطہ: 0344-8506173       
-        حافظ کورین لینگویج اکیڈمی: نئے داخلے جاری ہیں --- EPS-TOPIK ٹیسٹ کی 100% تیاری --- کوریا جانے کے سنہری موقع سے فائدہ اٹھائیں --- رابطہ: 0344-8506173
+        حافظ کورین لینگویج اکیڈمی: نئے داخلے جاری ہیں --- EPS-TOPIK ٹیسٹ کی 100% تیاری --- کوریا جانے کے سنہری موقع سے فائدہ اٹھائیں --- رابطہ: 0344-8506173 
     </div>
 </div>
 
@@ -233,9 +223,6 @@
 <section class="hero-content-down">
     <h1>حافظ کورین لینگویج اکیڈمی</h1>
     <p>جنوبی کوریا جانے کا خواب اب ہو گا پورا! EPS-TOPIK کی مکمل تیاری کے لیے بہترین ادارہ۔</p>
-    <a href="https://wa.me/923448506173?text=السلام علیکم! مجھے کورین زبان کے کورس کی معلومات چاہیے" class="btn btn-whatsapp">
-        <i class="fab fa-whatsapp"></i> داخلہ کے لیے رابطہ کریں
-    </a>
 </section>
 
 <div class="features">
@@ -264,8 +251,6 @@
             <div class="course-info">
                 <h3>بنیادی کورین زبان (Basic)</h3>
                 <p>حروف تہجی، گرامر اور روزمرہ بول چال کی مکمل تربیت۔</p>
-                <div class="price">مناسب فیس</div>
-                <button onclick="window.location.href='tel:+923448506173'" class="btn btn-call" style="width:100%">معلومات حاصل کریں</button>
             </div>
         </div>
         <div class="course-card">
@@ -273,10 +258,25 @@
             <div class="course-info">
                 <h3>ایڈوانس ٹیسٹ سیشن</h3>
                 <p>ماڈل پیپرز اور کمپیوٹر بیسڈ ٹیسٹ (CBT) کی مشق۔</p>
-                <div class="price">خصوصی رعایت</div>
-                <button onclick="window.location.href='https://wa.me/923448506173'" class="btn btn-whatsapp" style="width:100%">واٹس ایپ رابطہ</button>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="section" style="background: #fdfdfd;">
+    <h2 class="section-title">ہمارے بارے میں (About Us)</h2>
+    <div class="about-box">
+        <p>حافظ کورین لینگویج اکیڈمی منڈی بہاؤالدین کا ایک قابلِ اعتماد ادارہ ہے جہاں ہم طلباء کو جنوبی کوریا کے سرکاری روزگار ٹیسٹ (EPS-TOPIK) کے لیے تیار کرتے ہیں۔ ہمارا مقصد معیارِ تعلیم کو برقرار رکھتے ہوئے طلباء کو وہ تمام مہارتیں سکھانا ہے جو کوریا میں روزگار حاصل کرنے کے لیے ضروری ہیں۔ ہم یہاں گرامر، لسننگ، اور ریڈنگ پر خصوصی توجہ دیتے ہیں۔</p>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">طلباء کے تاثرات (Reviews)</h2>
+    <div class="review-grid">
+        <img src="review1.jpg" alt="Review 1" class="review-img">
+        <img src="review2.jpg" alt="Review 2" class="review-img">
+        <img src="review3.jpg" alt="Review 3" class="review-img">
+        <img src="review4.jpg" alt="Review 4" class="review-img">
     </div>
 </section>
 
@@ -286,14 +286,9 @@
         <i class="fas fa-file-pdf" style="font-size: 50px; color: var(--korea-red); margin-bottom: 15px;"></i>
         <h3>EPS-TOPIK مکمل گائیڈ بک</h3>
         <p>ٹیسٹ کی تیاری کے لیے بہترین کتاب یہاں سے ڈاؤن لوڈ کریں یا آن لائن پڑھیں۔</p>
-        
         <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px; flex-wrap: wrap;">
-            <a href="book.pdf" target="_blank" class="btn btn-call" style="flex: 1; min-width: 150px; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                <i class="fas fa-eye"></i> آن لائن پڑھیں
-            </a>
-            <a href="book.pdf" download class="btn" style="background: #343a40; color: white; flex: 1; min-width: 150px; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                <i class="fas fa-download"></i> ڈاؤن لوڈ کریں
-            </a>
+            <a href="book.pdf" target="_blank" class="btn btn-call" style="padding: 12px 25px;">آن لائن پڑھیں</a>
+            <a href="book.pdf" download class="btn" style="background: #343a40; color: white; padding: 12px 25px;">ڈاؤن لوڈ کریں</a>
         </div>
     </div>
 </section>
@@ -304,17 +299,7 @@
     <a href="https://maps.app.goo.gl/eyLWeZ7EEKLGZ5Kr5" target="_blank" class="btn btn-map">
         <i class="fas fa-map-marker-alt"></i> گوگل میپ پر لوکیشن دیکھیں
     </a>
-    <h3 style="color: var(--korea-blue); margin-top: 25px;"><i class="fas fa-phone-alt"></i> 0344-8506173</h3>
-    <p>کلاسوں کے اوقات: صبح 8 بجے سے شام 6 بجے تک</p>
 </section>
-
-<div class="fab-left">
-    <a href="https://wa.me/923448506173" class="fab" style="background: #25D366;"><i class="fab fa-whatsapp"></i></a>
-</div>
-
-<div class="fab-right">
-    <a href="tel:+923448506173" class="fab" style="background: #0047a0;"><i class="fas fa-phone"></i></a>
-</div>
 
 <footer style="background: var(--dark); color: white; padding: 20px; text-align: center;">
     <p>© 2026 Hafiz Korean Language Academy | All Rights Reserved  |  Design By Mirza Zawar</p>
