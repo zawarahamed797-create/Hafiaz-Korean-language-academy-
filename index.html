@@ -20,20 +20,22 @@
             text-align: right;
         }
 
-        /* Running Text Strip (Patti) */
+        /* Fast & Continuous Scrolling Patti */
         .scrolling-patti {
             background: var(--korea-red);
             color: white;
-            padding: 10px 0;
+            padding: 12px 0;
             overflow: hidden;
             white-space: nowrap;
             font-weight: bold;
+            border-bottom: 2px solid #fff;
         }
+        
         .scrolling-patti marquee {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
-        /* Header & Navigation */
+        /* Header */
         header {
             background: white;
             padding: 15px 5%;
@@ -54,19 +56,23 @@
         }
         .logo span { color: var(--korea-red); }
 
-        /* Hero Section with Banner */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('banner.jpg');
+        /* Empty Banner Section */
+        .hero-banner {
+            background: url('banner.jpg');
             background-size: cover;
             background-position: center;
-            color: white;
-            padding: 100px 5% 80px;
-            text-align: center;
+            height: 450px; /* بینر کی اونچائی */
+            width: 100%;
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+        /* New Section for Content (Previously on Hero) */
+        .hero-content-down {
+            text-align: center;
+            padding: 40px 5%;
+            background: white;
+        }
+        .hero-content-down h1 { font-size: 2.5rem; color: var(--korea-blue); margin-bottom: 10px; }
+        .hero-content-down p { font-size: 1.2rem; margin-bottom: 25px; color: #555; }
 
         /* Stats/Features */
         .features {
@@ -74,7 +80,6 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             padding: 40px 5%;
-            margin-top: -50px;
         }
 
         .feat-card {
@@ -85,7 +90,6 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             border-bottom: 4px solid var(--korea-blue);
         }
-
         .feat-card i { font-size: 40px; color: var(--korea-red); margin-bottom: 15px; }
 
         /* Course Section */
@@ -118,7 +122,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: 0.3s;
         }
-
         .course-card:hover { transform: translateY(-5px); }
         .course-img { height: 200px; background: #ddd; display: flex; align-items: center; justify-content: center; font-size: 50px; color: white; }
 
@@ -128,19 +131,20 @@
         /* Buttons */
         .btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 12px 35px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
             cursor: pointer;
             border: none;
+            font-size: 1.1rem;
         }
-
         .btn-whatsapp { background: #25D366; color: white; }
         .btn-call { background: var(--korea-blue); color: white; }
+        .btn-map { background: #ea4335; color: white; margin-top: 10px; }
 
-        /* Floating Action Buttons */
+        /* Floating Buttons */
         .fab-container {
             position: fixed;
             bottom: 20px;
@@ -150,7 +154,6 @@
             gap: 10px;
             z-index: 2000;
         }
-
         .fab {
             width: 60px;
             height: 60px;
@@ -165,7 +168,8 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+            .hero-banner { height: 250px; }
+            .hero-content-down h1 { font-size: 1.8rem; }
             header { flex-direction: column; gap: 10px; }
         }
     </style>
@@ -179,19 +183,21 @@
     </div>
 </header>
 
-<section class="hero">
+<div class="scrolling-patti">
+    <marquee behavior="scroll" direction="right" scrollamount="12">
+        حافظ کورین لینگویج اکیڈمی: نئے داخلے جاری ہیں --- EPS-TOPIK ٹیسٹ کی 100% تیاری --- کوریا جانے کے سنہری موقع سے فائدہ اٹھائیں --- رابطہ: 0344-8506173 --- حافظ کورین لینگویج اکیڈمی: نئے داخلے جاری ہیں --- EPS-TOPIK ٹیسٹ کی 100% تیاری --- رابطہ: 0344-8506173
+    </marquee>
+</div>
+
+<div class="hero-banner"></div>
+
+<section class="hero-content-down">
     <h1>حافظ کورین لینگویج اکیڈمی</h1>
     <p>جنوبی کوریا جانے کا خواب اب ہو گا پورا! EPS-TOPIK کی مکمل تیاری کے لیے بہترین ادارہ۔</p>
     <a href="https://wa.me/923448506173?text=السلام علیکم! مجھے کورین زبان کے کورس کی معلومات چاہیے" class="btn btn-whatsapp">
         <i class="fab fa-whatsapp"></i> داخلہ کے لیے رابطہ کریں
     </a>
 </section>
-
-<div class="scrolling-patti">
-    <marquee behavior="scroll" direction="right">
-        حافظ کورین لینگویج اکیڈمی: نئے داخلے جاری ہیں --- EPS-TOPIK ٹیسٹ کی 100% تیاری --- کوریا جانے کے سنہری موقع سے فائدہ اٹھائیں --- رابطہ: 0344-8506173
-    </marquee>
-</div>
 
 <div class="features">
     <div class="feat-card">
@@ -238,7 +244,10 @@
 <section class="section" style="background: #fff; text-align: center;">
     <h2 class="section-title">ہم سے رابطہ کریں</h2>
     <p style="font-size: 1.2rem;">ایڈریس: مین بازار، نزد جی پی او، گجرات</p>
-    <h3 style="color: var(--korea-blue);"><i class="fas fa-phone-alt"></i> 0344-8506173</h3>
+    <a href="https://www.google.com/maps/search/GPO+Gujrat" target="_blank" class="btn btn-map">
+        <i class="fas fa-map-marker-alt"></i> گوگل میپ پر لوکیشن دیکھیں
+    </a>
+    <h3 style="color: var(--korea-blue); margin-top: 25px;"><i class="fas fa-phone-alt"></i> 0344-8506173</h3>
     <p>کلاسوں کے اوقات: صبح 8 بجے سے شام 6 بجے تک</p>
 </section>
 
