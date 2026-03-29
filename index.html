@@ -154,6 +154,27 @@
         .btn-call { background: var(--korea-blue); color: white; }
         .btn-map { background: #ea4335; color: white; margin-top: 10px; }
 
+        /* --- Animation for Whatsapp Button --- */
+        .btn-animate {
+            animation: pulse-animation 2s infinite;
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+
+        @keyframes pulse-animation {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
         /* Floating Buttons */
         .fab-container {
             position: fixed;
@@ -205,7 +226,7 @@
 <section class="hero-content-down">
     <h1>حافظ کورین لینگویج اکیڈمی</h1>
     <p>جنوبی کوریا جانے کا خواب اب ہو گا پورا! EPS-TOPIK کی مکمل تیاری کے لیے بہترین ادارہ۔</p>
-    <a href="https://wa.me/923448506173?text=السلام علیکم! مجھے کورین زبان کے کورس کی معلومات چاہیے" class="btn btn-whatsapp">
+    <a href="https://wa.me/923448506173?text=السلام علیکم! مجھے کورین زبان کے کورس کی معلومات چاہیے" class="btn btn-whatsapp btn-animate">
         <i class="fab fa-whatsapp"></i> داخلہ کے لیے رابطہ کریں
     </a>
 </section>
