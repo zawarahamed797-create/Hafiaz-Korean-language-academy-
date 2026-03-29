@@ -11,6 +11,7 @@
             --korea-red: #cd2e3a;
             --dark: #1a1a1a;
             --light: #f4f7f6;
+            --glow-color: rgba(0, 71, 160, 0.6);
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -45,30 +46,117 @@
             100% { transform: translateX(100%); }
         }
 
-        /* Header */
+        /* --- STUNNING ARTISTIC LOGO CSS STARTS --- */
         header {
             background: white;
-            padding: 15px 5%;
+            padding: 10px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: var(--korea-blue);
+        /* Logo Container with Animated Background Glow */
+        .logo-art-container {
+            position: relative;
+            padding: 10px 20px;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden; /* Glow bahar na jaye */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* The moving glow effect behind text */
+        .logo-art-container::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: conic-gradient(
+                from 180deg at 50% 50%,
+                var(--korea-blue) 0%,
+                var(--korea-red) 25%,
+                var(--korea-blue) 50%,
+                var(--korea-red) 75%,
+                var(--korea-blue) 100%
+            );
+            animation: rotateGlow 4s linear infinite;
+            top: -25%;
+            left: -25%;
+            z-index: 1;
+            filter: blur(10px);
+            opacity: 0.3; /* Halka sa glow */
+        }
+
+        /* White mask to create the inner border effect */
+        .logo-art-container::after {
+            content: '';
+            position: absolute;
+            inset: 3px; /* Border thickness */
+            background: white;
+            border-radius: 6px;
+            z-index: 2;
+        }
+
+        /* The actual logo content */
+        .logo-content {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             text-decoration: none;
         }
-        .logo span { color: var(--korea-red); }
+
+        /* Spinning Korean Symbol Icon */
+        .korean-symbol {
+            font-size: 24px;
+            color: var(--korea-red);
+            animation: symbolSpin 5s linear infinite;
+        }
+
+        /* The Text Art */
+        .logo-text-art {
+            font-size: 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--korea-blue);
+            /* 3D Text Shadow Effect */
+            text-shadow: 
+                1px 1px 0px #fff,
+                2px 2px 0px rgba(0,0,0,0.1),
+                0 0 5px var(--glow-color);
+        }
+
+        .logo-text-art span {
+            color: var(--korea-red);
+            text-shadow: 
+                1px 1px 0px #fff,
+                2px 2px 0px rgba(0,0,0,0.1),
+                0 0 5px rgba(205, 46, 58, 0.5);
+        }
+
+        /* Animations for Logo */
+        @keyframes rotateGlow {
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes symbolSpin {
+            100% { transform: rotateY(360deg); }
+        }
+        /* --- STUNNING ARTISTIC LOGO CSS ENDS --- */
 
         .header-btns {
             display: flex;
             gap: 8px;
+            position: relative;
+            z-index: 10;
         }
 
         /* Banner */
@@ -198,14 +286,23 @@
         @media (max-width: 768px) {
             .hero-banner { height: 250px; }
             header { flex-direction: column; gap: 15px; padding: 20px 2%; }
-            .logo { font-size: 18px; }
+            .logo-text-art { font-size: 16px; }
+            .logo-art-container { padding: 5px 10px; }
         }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="#" class="logo">HAFIZ KOREAN <span>ACADEMY</span></a>
+    <div class="logo-art-container">
+        <a href="#" class="logo-content">
+            <i class="fas fa-circle-notch korean-symbol"></i>
+            <div class="logo-text-art">
+                Hafiz Korean <span>Academy</span>
+            </div>
+        </a>
+    </div>
+
     <div class="header-btns">
         <a href="https://wa.me/923448506173" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         <a href="tel:+923448506173" class="btn btn-call"><i class="fas fa-phone"></i> Call Now</a>
