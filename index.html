@@ -18,9 +18,10 @@
             background-color: var(--light);
             color: #333;
             text-align: right;
+            overflow-x: hidden;
         }
 
-        /* Continuous Scrolling Patti Fix */
+        /* Continuous Scrolling Patti Fix - Updated for Smooth Flow */
         .scrolling-patti {
             background: var(--korea-red);
             color: white;
@@ -29,11 +30,19 @@
             white-space: nowrap;
             font-weight: bold;
             border-bottom: 2px solid #fff;
+            position: relative;
         }
         
-        .scrolling-patti marquee {
+        .scroll-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll-right 30s linear infinite;
             font-size: 1.2rem;
-            display: block;
+        }
+
+        @keyframes scroll-right {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
         /* Header */
@@ -62,11 +71,11 @@
             background: url('banner.jpg');
             background-size: cover;
             background-position: center;
-            height: 450px; /* بینر کی اونچائی */
+            height: 450px; 
             width: 100%;
         }
 
-        /* New Section for Content (Previously on Hero) */
+        /* New Section for Content */
         .hero-content-down {
             text-align: center;
             padding: 40px 5%;
@@ -185,9 +194,10 @@
 </header>
 
 <div class="scrolling-patti">
-    <marquee behavior="scroll" direction="right" scrollamount="12">
-        حافظ کورین لینگویج اکیڈمی: نئے داخلے جاری ہیں --- EPS-TOPIK ٹیسٹ کی 100% تیاری --- کوریا جانے کے سنہری موقع سے فائدہ اٹھائیں --- رابطہ: 0344-8506173 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; حافظ کورین لینگویج اکیڈمی: نئے داخلے جاری ہیں --- EPS-TOPIK ٹیسٹ کی 100% تیاری --- کوریا جانے کے سنہری موقع سے فائدہ اٹھائیں --- رابطہ: 0344-8506173 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </marquee>
+    <div class="scroll-content">
+        حافظ کورین لینگویج اکیڈمی: نئے داخلے جاری ہیں --- EPS-TOPIK ٹیسٹ کی 100% تیاری --- کوریا جانے کے سنہری موقع سے فائدہ اٹھائیں --- رابطہ: 0344-8506173 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        حافظ کورین لینگویج اکیڈمی: نئے داخلے جاری ہیں --- EPS-TOPIK ٹیسٹ کی 100% تیاری --- کوریا جانے کے سنہری موقع سے فائدہ اٹھائیں --- رابطہ: 0344-8506173
+    </div>
 </div>
 
 <div class="hero-banner"></div>
