@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafiz Korean Language Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --korea-blue: #0047a0;
+            --korea-red: #cd2e3a;
+            --dark: #1a1a1a;
+            --light: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--light);
+            color: #333;
+            text-align: right;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--korea-blue);
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--korea-red); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 71, 160, 0.8), rgba(205, 46, 58, 0.8)), 
+                        url('https://images.unsplash.com/photo-1517502884422-41eaadeff171?q=80&w=1200');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 5% 60px;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+
+        /* Stats/Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px 5%;
+            margin-top: -50px;
+        }
+
+        .feat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--korea-blue);
+        }
+
+        .feat-card i { font-size: 40px; color: var(--korea-red); margin-bottom: 15px; }
+
+        /* Course Section */
+        .section { padding: 50px 5%; }
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--korea-red);
+            margin: 10px auto;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .course-card:hover { transform: translateY(-5px); }
+        .course-img { height: 200px; background: #ddd; display: flex; align-items: center; justify-content: center; font-size: 50px; color: white; }
+
+        .course-info { padding: 20px; }
+        .price { color: var(--korea-blue); font-weight: bold; font-size: 22px; margin: 10px 0; }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-whatsapp { background: #25D366; color: white; }
+        .btn-call { background: var(--korea-blue); color: white; }
+
+        /* Floating Action Buttons */
+        .fab-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 2000;
+        }
+
+        .fab {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            header { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="#" class="logo">HAFIZ <span>ACADEMY</span></a>
+    <div>
+        <a href="tel:03488222368" class="btn btn-call"><i class="fas fa-phone"></i> ابھی کال کریں</a>
+    </div>
+</header>
+
+<section class="hero">
+    <h1>حافظ کورین لینگویج اکیڈمی</h1>
+    <p>جنوبی کوریا جانے کا خواب اب ہو گا پورا! EPS-TOPIK کی مکمل تیاری کے لیے بہترین ادارہ۔</p>
+    <a href="https://wa.me/923488222368?text=السلام علیکم! مجھے کورین زبان کے کورس کی معلومات چاہیے" class="btn btn-whatsapp">
+        <i class="fab fa-whatsapp"></i> داخلہ کے لیے رابطہ کریں
+    </a>
+</section>
+
+<div class="features">
+    <div class="feat-card">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <h3>تجربہ کار اساتذہ</h3>
+        <p>کوریا سے پلٹے ہوئے ماہر اساتذہ کی زیر نگرانی تعلیم۔</p>
+    </div>
+    <div class="feat-card">
+        <i class="fas fa-book-open"></i>
+        <h3>جدید نصاب</h3>
+        <p>EPS-TOPIK کے نئے پیٹرن کے مطابق ٹیسٹ کی تیاری۔</p>
+    </div>
+    <div class="feat-card">
+        <i class="fas fa-check-circle"></i>
+        <h3>کامیابی کی ضمانت</h3>
+        <p>سینکڑوں طلباء اب تک کوریا جا چکے ہیں۔</p>
+    </div>
+</div>
+
+<section class="section">
+    <h2 class="section-title">ہمارے کورسز</h2>
+    <div class="course-grid">
+        <div class="course-card">
+            <div class="course-img" style="background: var(--korea-blue);">EPS-TOPIK</div>
+            <div class="course-info">
+                <h3>بنیادی کورین زبان (Basic)</h3>
+                <p>حروف تہجی، گرامر اور روزمرہ بول چال کی مکمل تربیت۔</p>
+                <div class="price">مناسب فیس</div>
+                <button onclick="window.location.href='tel:03488222368'" class="btn btn-call" style="width:100%">معلومات حاصل کریں</button>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-img" style="background: var(--korea-red);">SKILL TEST</div>
+            <div class="course-info">
+                <h3>ایڈوانس ٹیسٹ سیشن</h3>
+                <p>ماڈل پیپرز اور کمپیوٹر بیسڈ ٹیسٹ (CBT) کی مشق۔</p>
+                <div class="price">خصوصی رعایت</div>
+                <button onclick="window.location.href='https://wa.me/923488222368'" class="btn btn-whatsapp" style="width:100%">واٹس ایپ رابطہ</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: #fff; text-align: center;">
+    <h2 class="section-title">ہم سے رابطہ کریں</h2>
+    <p style="font-size: 1.2rem;">ایڈریس: مین بازار، نزد جی پی او، (آپ کا شہر یہاں لکھیں)</p>
+    <h3 style="color: var(--korea-blue);"><i class="fas fa-phone-alt"></i> 0348-8222368</h3>
+    <p>کلاسوں کے اوقات: صبح 8 بجے سے شام 6 بجے تک</p>
+</section>
+
+<div class="fab-container">
+    <a href="https://wa.me/923488222368" class="fab" style="background: #25D366;"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:03488222368" class="fab" style="background: #0047a0;"><i class="fas fa-phone"></i></a>
+</div>
+
+<footer style="background: var(--dark); color: white; padding: 20px; text-align: center;">
+    <p>© 2026 Hafiz Korean Language Academy | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
+
