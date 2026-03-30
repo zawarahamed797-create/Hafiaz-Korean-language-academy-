@@ -22,7 +22,7 @@
             overflow-x: hidden;
         }
 
-        /* Continuous Scrolling Patti */
+        /* Continuous Scrolling Patti - Corrected for Urdu Direction */
         .scrolling-patti {
             background: var(--korea-red);
             color: white;
@@ -37,16 +37,16 @@
         .scroll-content {
             display: inline-block;
             white-space: nowrap;
-            animation: scroll-right 40s linear infinite;
+            animation: scroll-left 40s linear infinite; /* Changed to scroll-left for RTL flow */
             font-size: 1.2rem;
         }
 
-        @keyframes scroll-right {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+        @keyframes scroll-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
 
-        /* --- STUNNING ARTISTIC LOGO CSS STARTS --- */
+        /* --- STUNNING ARTISTIC LOGO CSS --- */
         header {
             background: white;
             padding: 10px 5%;
@@ -59,19 +59,17 @@
             z-index: 1000;
         }
 
-        /* Logo Container with Animated Background Glow */
         .logo-art-container {
             position: relative;
             padding: 10px 20px;
             background: #fff;
             border-radius: 8px;
-            overflow: hidden; /* Glow bahar na jaye */
+            overflow: hidden;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        /* The moving glow effect behind text */
         .logo-art-container::before {
             content: '';
             position: absolute;
@@ -90,20 +88,18 @@
             left: -25%;
             z-index: 1;
             filter: blur(10px);
-            opacity: 0.3; /* Halka sa glow */
+            opacity: 0.3;
         }
 
-        /* White mask to create the inner border effect */
         .logo-art-container::after {
             content: '';
             position: absolute;
-            inset: 3px; /* Border thickness */
+            inset: 3px;
             background: white;
             border-radius: 6px;
             z-index: 2;
         }
 
-        /* The actual logo content */
         .logo-content {
             position: relative;
             z-index: 3;
@@ -113,44 +109,24 @@
             text-decoration: none;
         }
 
-        /* Spinning Korean Symbol Icon */
         .korean-symbol {
             font-size: 24px;
             color: var(--korea-red);
             animation: symbolSpin 5s linear infinite;
         }
 
-        /* The Text Art */
         .logo-text-art {
             font-size: 20px;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--korea-blue);
-            /* 3D Text Shadow Effect */
-            text-shadow: 
-                1px 1px 0px #fff,
-                2px 2px 0px rgba(0,0,0,0.1),
-                0 0 5px var(--glow-color);
-        }
-
-        .logo-text-art span {
-            color: var(--korea-red);
-            text-shadow: 
-                1px 1px 0px #fff,
-                2px 2px 0px rgba(0,0,0,0.1),
-                0 0 5px rgba(205, 46, 58, 0.5);
+            text-shadow: 1px 1px 0px #fff, 2px 2px 0px rgba(0,0,0,0.1), 0 0 5px var(--glow-color);
         }
 
         /* Animations for Logo */
-        @keyframes rotateGlow {
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes symbolSpin {
-            100% { transform: rotateY(360deg); }
-        }
-        /* --- STUNNING ARTISTIC LOGO CSS ENDS --- */
+        @keyframes rotateGlow { 100% { transform: rotate(360deg); } }
+        @keyframes symbolSpin { 100% { transform: rotateY(360deg); } }
 
         .header-btns {
             display: flex;
@@ -159,7 +135,6 @@
             z-index: 10;
         }
 
-        /* Banner */
         .hero-banner {
             background: url('banner.jpg');
             background-size: cover;
@@ -168,14 +143,9 @@
             width: 100%;
         }
 
-        .hero-content-down {
-            text-align: center;
-            padding: 40px 5%;
-            background: white;
-        }
+        .hero-content-down { text-align: center; padding: 40px 5%; background: white; }
         .hero-content-down h1 { font-size: 2.5rem; color: var(--korea-blue); margin-bottom: 10px; }
 
-        /* Features */
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -206,7 +176,6 @@
             75% { transform: rotate(-10deg); }
         }
 
-        /* Section Styling */
         .section { padding: 50px 5%; }
         .section-title {
             text-align: center;
@@ -223,7 +192,6 @@
             margin: 10px auto;
         }
 
-        /* Course Grid */
         .course-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -240,7 +208,6 @@
         .course-img { height: 200px; background: #ddd; display: flex; align-items: center; justify-content: center; font-size: 50px; color: white; }
         .course-info { padding: 20px; }
 
-        /* Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -259,7 +226,6 @@
         .btn-call { background: var(--korea-blue); color: white; }
         .btn-map { background: #ea4335; color: white; margin-top: 10px; padding: 12px 30px;}
 
-        /* About Section */
         .about-box {
             background: white;
             padding: 30px;
@@ -268,7 +234,6 @@
             line-height: 1.8;
         }
 
-        /* Review Photos */
         .review-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -298,7 +263,7 @@
         <a href="#" class="logo-content">
             <i class="fas fa-circle-notch korean-symbol"></i>
             <div class="logo-text-art">
-                Hafiz Korean <span>Academy</span>
+                Hafiz Korean Language Academy
             </div>
         </a>
     </div>
@@ -355,6 +320,7 @@
             <div class="course-info">
                 <h3>ایڈوانس ٹیسٹ سیشن</h3>
                 <p>ماڈل پیپرز اور کمپیوٹر بیسڈ ٹیسٹ (CBT) کی مشق۔</p>
+                <p><strong>سکل ٹیسٹ کی مکمل تیاری کروائی جاتی ہے۔</strong></p>
             </div>
         </div>
     </div>
