@@ -22,7 +22,7 @@
             overflow-x: hidden;
         }
 
-        /* Continuous Scrolling Patti - Corrected for Urdu Direction */
+        /* Continuous Scrolling Patti - Set to Left to Right */
         .scrolling-patti {
             background: var(--korea-red);
             color: white;
@@ -32,18 +32,19 @@
             font-weight: bold;
             border-bottom: 2px solid #fff;
             position: relative;
+            direction: ltr; /* Content inside patti flows LTR */
         }
         
         .scroll-content {
             display: inline-block;
             white-space: nowrap;
-            animation: scroll-left 40s linear infinite; /* Changed to scroll-left for RTL flow */
+            animation: scroll-right 40s linear infinite; /* Animation for Left to Right */
             font-size: 1.2rem;
         }
 
-        @keyframes scroll-left {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+        @keyframes scroll-right {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
 
         /* --- STUNNING ARTISTIC LOGO CSS --- */
@@ -124,7 +125,6 @@
             text-shadow: 1px 1px 0px #fff, 2px 2px 0px rgba(0,0,0,0.1), 0 0 5px var(--glow-color);
         }
 
-        /* Animations for Logo */
         @keyframes rotateGlow { 100% { transform: rotate(360deg); } }
         @keyframes symbolSpin { 100% { transform: rotateY(360deg); } }
 
@@ -276,7 +276,7 @@
 
 <div class="scrolling-patti">
     <div class="scroll-content">
-        حافظ کورین لینگویج اکیڈمی: نئے داخلے جاری ہیں --- EPS-TOPIK ٹیسٹ کی 100% تیاری --- کوریا جانے کے سنہری موقع سے فائدہ اٹھائیں --- رابطہ: 0344-8506173 
+        رابطہ: <span style="direction: ltr; unicode-bidi: embed;">0344-8506173</span> --- حافظ کورین لینگویج اکیڈمی: نئے داخلے جاری ہیں --- EPS-TOPIK ٹیسٹ کی 100% تیاری --- کوریا جانے کے سنہری موقع سے فائدہ اٹھائیں
     </div>
 </div>
 
